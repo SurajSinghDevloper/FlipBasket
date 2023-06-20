@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import { DashboardContext } from "./";
 import { GetAllData } from "./Action";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const DashboardCard = (props) => {
   const { data, dispatch } = useContext(DashboardContext);
@@ -75,7 +76,7 @@ const DashboardCard = (props) => {
           <div className="text-2xl font-semibold">
             {data ? data.totalData.Orders : 0}
           </div>
-          <div className="text-lg font-medium">Orders</div>
+          <Link to='/admin/dashboard/orders' className="text-lg font-medium">Orders</Link>
           <div className="flex items-center space-x-1 text-green-500">
             <span>10%</span>
             <span>
@@ -114,7 +115,7 @@ const DashboardCard = (props) => {
           <div className="text-2xl font-semibold">
             {data ? data.totalData.Products : 0}
           </div>
-          <div className="text-lg font-medium">Product</div>
+          <Link to='/admin/dashboard/products' className="text-lg font-medium">Product</Link>
         </div>
         <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-orange-200">
           <div className="bg-orange-200 p-2 cursor-pointer rounded-full">
@@ -136,7 +137,7 @@ const DashboardCard = (props) => {
           <div className="text-2xl font-semibold">
             {data ? data.totalData.Categories : 0}
           </div>
-          <div className="text-lg font-medium">Categories</div>
+          <Link to='/admin/dashboard/categories' className="text-lg font-medium">Categories</Link>
         </div>
       </div>
       {/* End Card */}
